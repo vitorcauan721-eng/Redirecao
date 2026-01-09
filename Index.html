@@ -3,26 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Área Exclusiva</title>
-  <meta name="description" content="Acesso exclusivo e restrito para usuários convidados.">
+  <title>Carregando área exclusiva...</title>
+  <meta name="description" content="Acessando conteúdo exclusivo restrito.">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Anti-ban tactics -->
+  <!-- Anti rastreio -->
   <meta name="robots" content="noindex,nofollow">
   <meta http-equiv="Cache-Control" content="no-store">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-  <script>
-    // redirecionamento final via JS (menos óbvio para scanners)
-    function acessarConteudo(){
-      window.location.href = "https://t.me/favelasul";
-    }
-  </script>
 </head>
 <body>
-  <div class="container">
-    <button class="btn" onclick="acessarConteudo()">Acessar Área Restrita</button>
+  <div class="wrapper">
+    <div class="loader"></div>
+    <p class="loading-text">Preparando acesso seguro...</p>
   </div>
+
+  <script>
+    // CLOAKER BÁSICO (anti-bot/anti-scanner)
+    const badAgents = [
+      "facebookexternalhit",
+      "facebookcatalog",
+      "facebook",
+      "meta",
+      "whatsapp",
+      "telegrambot",
+      "bot",
+      "crawler",
+      "spider",
+      "preview",
+      "fetch",
+      "curl",
+      "python",
+      "node",
+      "ahrefs",
+      "semrush",
+      "bingbot",
+      "googlebot",
+      "yahoobot"
+    ];
+
+    const agent = navigator.userAgent.toLowerCase();
+    const isBot = badAgents.some(b => agent.includes(b));
+
+    // SE for bot → mostra só tela fake limpa
+    if(isBot){
+      document.querySelector(".loading-text").innerText = "Área restrita";
+    } else {
+      // SE for humano → redireciona após tempo
+      setTimeout(()=>{
+        window.location.href = "https://t.me/favelasul";
+      }, 5000); // 5s
+    }
+  </script>
+
 </body>
 </html>
