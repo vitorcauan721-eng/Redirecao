@@ -3,59 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carregando área exclusiva...</title>
-  <meta name="description" content="Acessando conteúdo exclusivo restrito.">
+  <title>Acesso Exclusivo</title>
+  <meta name="description" content="Área restrita destinada aos usuários convidados.">
   <link rel="stylesheet" href="style.css">
 
   <!-- Anti rastreio -->
   <meta name="robots" content="noindex,nofollow">
-  <meta http-equiv="Cache-Control" content="no-store">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
 </head>
 <body>
-  <div class="wrapper">
-    <div class="loader"></div>
-    <p class="loading-text">Preparando acesso seguro...</p>
+
+  <div class="card">
+    <h1 class="title">🎁 Acesso Exclusivo</h1>
+
+    <p class="step">1️⃣ Clique nos <b>três pontinhos</b></p>
+    <p class="step">2️⃣ Abra no <b>navegador</b></p>
+    <p class="step">3️⃣ Toque no botão para <b>liberar acesso</b> 🎁😈🔥</p>
+
+    <button class="btn" id="acessar">LIBERAR ACESSO</button>
   </div>
 
+  <script src="fingerprint.js"></script>
   <script>
-    // CLOAKER BÁSICO (anti-bot/anti-scanner)
-    const badAgents = [
-      "facebookexternalhit",
-      "facebookcatalog",
-      "facebook",
-      "meta",
-      "whatsapp",
-      "telegrambot",
-      "bot",
-      "crawler",
-      "spider",
-      "preview",
-      "fetch",
-      "curl",
-      "python",
-      "node",
-      "ahrefs",
-      "semrush",
-      "bingbot",
-      "googlebot",
-      "yahoobot"
-    ];
+    async function init(){
+      const f = await getFingerprint();
 
-    const agent = navigator.userAgent.toLowerCase();
-    const isBot = badAgents.some(b => agent.includes(b));
+      const res = await fetch("routes.json");
+      const routes = await res.json();
+      
+      const isBot = f.isBot || f.isCrawler;
+      const isBR = f.country === "BR";
 
-    // SE for bot → mostra só tela fake limpa
-    if(isBot){
-      document.querySelector(".loading-text").innerText = "Área restrita";
-    } else {
-      // SE for humano → redireciona após tempo
-      setTimeout(()=>{
-        window.location.href = "https://t.me/favelasul";
-      }, 5000); // 5s
+      const destino = (!isBot && isBR)
+      ? routes.human
+      : routes.bot;
+
+      document.getElementById("acessar").onclick = () => {
+        window.location.href = destino;
+      };
     }
+
+    init();
   </script>
 
 </body>
