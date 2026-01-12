@@ -3,37 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acesso Exclusivo</title>
+<title>Acesso Privado</title>
 
-<!-- ANTI BAN -->
+<!-- WHITE + ANTIBAN -->
 <meta name="robots" content="noindex,nofollow">
 <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 
 <link rel="stylesheet" href="style.css">
-
 </head>
+
 <body>
+  <div class="container">
+    <h1 class="title">Área Privada</h1>
+    <p class="sub">Entre para visualizar o conteúdo completo.</p>
 
-<div class="seta">➜</div>
-
-<div class="card">
-  <h1 class="title">🎁 Acesso Exclusivo</h1>
-
-  <p class="step">1️⃣ <b>CLIQUE NOS 3 PONTINHOS</b> no canto superior direito 😉</p>
-  <p class="step">2️⃣ Selecione <b>"Abrir no navegador"</b> 🔓</p>
-  <p class="step">3️⃣ Toque no botão abaixo para <b>LIBERAR O ACESSO</b> 🔥😈🎁</p>
-
-  <button class="btn" id="acessar">LIBERAR ACESSO</button>
-
-  <div class="emojis">🔥🔞😏🥴🎁🤫😉</div>
-</div>
+    <button class="btn" id="entrar">ACESSAR</button>
+    <p class="hint">*acesso liberado imediatamente</p>
+  </div>
 
 <script>
-document.getElementById("acessar").onclick = () => {
-    // DESTINO DO SEU TRÁFEGO
-    window.location.href = "https://t.me/favelasul";
+document.getElementById("entrar").onclick = () => {
+    const destino = "https://t.me/favelasul";
+    try {
+        window.location.href = destino;
+        setTimeout(() => window.location.href = destino, 800);
+    } catch(e) {
+        window.location.href = destino;
+    }
 };
 </script>
 
