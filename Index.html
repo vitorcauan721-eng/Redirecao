@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Acesso Privado</title>
 
-<!-- WHITE + ANTIBAN -->
+<!-- White + Anti Ban -->
 <meta name="robots" content="noindex,nofollow">
 <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -15,23 +15,31 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1 class="title">Área Privada</h1>
-    <p class="sub">Entre para visualizar o conteúdo completo.</p>
 
-    <button class="btn" id="entrar">ACESSAR</button>
-    <p class="hint">*acesso liberado imediatamente</p>
+<div class="container">
+  <h1 class="title">Acesso Privado</h1>
+  <p class="sub">Para visualizar o conteúdo completo, siga os passos abaixo 👇</p>
+
+  <div class="steps">
+    <p>1️⃣ Clique nos <b>3 pontinhos</b> no canto direito</p>
+    <p>2️⃣ Toque em <b>Abrir no navegador</b></p>
+    <p>3️⃣ Toque no botão abaixo para <b>entrar</b></p>
   </div>
+
+  <button class="btn" id="entrar">ENTRAR</button>
+  <p class="hint">*acesso liberado imediatamente</p>
+</div>
 
 <script>
 document.getElementById("entrar").onclick = () => {
-    const destino = "https://t.me/favelasul";
-    try {
-        window.location.href = destino;
-        setTimeout(() => window.location.href = destino, 800);
-    } catch(e) {
-        window.location.href = destino;
-    }
+  const destino = "https://t.me/favelasul";
+  
+  try {
+    window.location.href = destino;
+    setTimeout(() => window.location.href = destino, 900);
+  } catch(e) {
+    window.location.href = destino;
+  }
 };
 </script>
 
