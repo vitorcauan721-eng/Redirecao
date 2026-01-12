@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -12,9 +12,11 @@
   <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-
 </head>
+
 <body>
+
+  <div class="seta">➜</div>
 
   <div class="card">
     <h1 class="title">🎁 Acesso Exclusivo</h1>
@@ -38,8 +40,8 @@
       const isBR = f.country === "BR";
 
       const destino = (!isBot && isBR)
-      ? routes.human
-      : routes.bot;
+        ? routes.human
+        : routes.bot;
 
       document.getElementById("acessar").onclick = () => {
         window.location.href = destino;
