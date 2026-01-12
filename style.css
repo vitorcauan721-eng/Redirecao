@@ -1,68 +1,51 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: #fff;
   margin: 0;
   padding: 0;
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.card {
-  margin-top: 80px;
+.container {
+  text-align: center;
   width: 90%;
   max-width: 420px;
-  background: #1b1b1b;
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.1);
-  text-align: center;
 }
 
 .title {
-  margin-bottom: 15px;
+  font-size: 26px;
+  margin-bottom: 12px;
 }
 
-.step {
+.sub {
   font-size: 16px;
-  margin: 10px 0;
-  line-height: 1.4;
+  opacity: 0.9;
+  margin-bottom: 22px;
 }
 
 .btn {
-  margin-top: 20px;
   width: 100%;
-  padding: 14px;
-  background: #ff005c;
+  padding: 16px;
+  background: #0af;
   border: none;
-  color: #fff;
-  font-size: 18px;
   border-radius: 10px;
-  cursor: pointer;
+  font-size: 18px;
+  color: #fff;
   font-weight: bold;
+  cursor: pointer;
 }
 
-.btn:hover {
-  background: #ff2975;
+.btn:active {
+  opacity: 0.8;
 }
 
-.emojis {
-  margin-top: 22px;
-  font-size: 24px;
+.hint {
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: 0.7;
 }
-
-.seta {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 32px;
-  animation: bounce 1s infinite alternate;
-}
-
-@keyframes bounce {
-  to {
-    transform: translateY(8px);
-  }
-}
+ 
