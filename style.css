@@ -1,57 +1,68 @@
 body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background: #fff;
+  height: 100vh;
 }
 
-/* CARD CENTRAL */
 .card {
+  margin-top: 80px;
   width: 90%;
-  max-width: 350px;
-  padding: 20px;
-  border-radius: 12px;
-  background: #fafafa;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 420px;
+  background: #1b1b1b;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
   text-align: center;
 }
 
-/* TITULO */
 .title {
-  margin-top: 0;
-  font-size: 24px;
+  margin-bottom: 15px;
 }
 
-/* PASSOS */
 .step {
   font-size: 16px;
   margin: 10px 0;
+  line-height: 1.4;
 }
 
-/* BOTÃO */
 .btn {
-  margin-top: 18px;
+  margin-top: 20px;
   width: 100%;
   padding: 14px;
+  background: #ff005c;
   border: none;
-  background: #111;
   color: #fff;
-  font-size: 16px;
-  border-radius: 8px;
+  font-size: 18px;
+  border-radius: 10px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-/* SETA NO CANTO SUPERIOR DIREITO */
+.btn:hover {
+  background: #ff2975;
+}
+
+.emojis {
+  margin-top: 22px;
+  font-size: 24px;
+}
+
 .seta {
-  position: fixed;
+  position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 42px;
-  font-weight: bold;
-  transform: rotate(-45deg); /* aponta para cima e direita */
-  pointer-events: none;
+  font-size: 32px;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  to {
+    transform: translateY(8px);
+  }
 }
